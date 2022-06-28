@@ -22,9 +22,10 @@ except FileNotFoundError:
 
 else:
     # Распределяем книги по пользователям
-    for user in users_list:
-        if len(books_info) > 0:
-            user['books'].append(books_info.pop())
+    while len(books_info) > 0:
+        for user in users_list:
+            if len(books_info) > 0:
+                user['books'].append(books_info.pop())
 
 
         # Создаем файл
